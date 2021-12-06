@@ -1,0 +1,19 @@
+Considérons un disque (jaune) de centre O et de rayon 1 inscrit dans un carré (vert). 
+Intuitivement, si l’on prend un point au hasard dans le carré vert, la probabilité pour 
+qu’il soit dans le disque jaune est égale à la proportion de ce dernier dans le carré, à savoir :
+aire du disqueaire / air du carré =π×1**2/2×2=π/4.
+
+Ainsi, si l’on arrive à déterminer une valeur approchée de cette probabilité,
+ on arrivera à trouver une valeur approchée de π en multipliant par 4.
+ C’est l’objectif de la méthode de Monte-Carlo.
+
+ Méthode de Monte-Carlo
+ L’idée est de considérer l’expérience consistant à choir un point au hasard dans 
+ le carré vert et à regarder s’il est dans le disque jaune, puis de répéter cette expérience 
+ un assez grand nombre de fois afin de calculer la proportion de points à l’intérieur du disque 
+ par rapport au nombre total de points. 
+
+ On va imaginer une fonction is_in() renvoyant 1 si un point choisi au hasard est dans le cercle, 
+ et renvoyant 0 sinon. Pour cela, on se place dans un repère (O,I,J), où le disque jaune est
+  de centre O. On choisit au hasard deux nombres a et b, tous deux compris entre 0 et 1 et 
+  on calcule les coordonnées d’un point M(x;y) tel que x=−1+2a et y=−1+2b; ainsi, M est dans le carré vert. 
